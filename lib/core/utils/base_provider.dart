@@ -23,11 +23,11 @@ class BaseProvider with ChangeNotifier {
 
   static bool checkAPIDataWithErrorSuccessCallback(
       {required res, Function? onSuccess, Function? onError}) {
-    if (res.data['status'] == 1) {
+    if (res.data.isNotEmpty) {
       if (onSuccess != null) onSuccess(res.data["message"]);
       return true;
     } else {
-      if (res.data['status'] == 0) {
+      if (res.data.isEmpty) {
         if (onError != null) {
           onError(res.data["message"]);
         }

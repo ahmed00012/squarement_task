@@ -17,6 +17,16 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    WidgetsBinding.instance.addPostFrameCallback((_){
+    HomeProvider.get(context).getAllPhotos();
+    HomeProvider.get(context).getAllUsers();
+    });
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
