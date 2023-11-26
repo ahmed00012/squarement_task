@@ -39,6 +39,7 @@ class _MainLayoutScreenState extends State<MainLayoutScreen> {
           bottomNavigationBar: BottomNavigationBar(
               currentIndex: mainLayoutProvider.bottomNavigationIndex,
               backgroundColor: AppColor.whiteColor,
+
               onTap: (index) => mainLayoutProvider.bottomNavigationChanged(index),
               unselectedFontSize: 10.sp,
               selectedFontSize: 14.sp,
