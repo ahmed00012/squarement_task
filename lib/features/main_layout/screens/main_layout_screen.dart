@@ -16,15 +16,6 @@ class MainLayoutScreen extends StatefulWidget {
 }
 
 class _MainLayoutScreenState extends State<MainLayoutScreen> {
-
-
-  List<Widget> screens = [
-    const HomeScreen(),
-    const HomeScreen(),
-    const HomeScreen(),
-    const HomeScreen(),
-    const HomeScreen(),
-  ];
   @override
   Widget build(BuildContext context) {
     return Consumer<MainLayoutProvider>(builder: (context, mainLayoutProvider, _) {
@@ -44,7 +35,7 @@ class _MainLayoutScreenState extends State<MainLayoutScreen> {
               ),
             ),
           ),
-          body: screens[mainLayoutProvider.bottomNavigationIndex],
+          body: mainLayoutProvider.screens[mainLayoutProvider.bottomNavigationIndex],
           bottomNavigationBar: BottomNavigationBar(
               currentIndex: mainLayoutProvider.bottomNavigationIndex,
               backgroundColor: AppColor.whiteColor,

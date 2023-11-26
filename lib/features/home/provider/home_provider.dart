@@ -106,7 +106,7 @@ class HomeProvider extends BaseProvider {
   }
 
 
-  mainCatChangeIndex(int index){
+  mainCategoryChangeIndex(int index){
     selectedCategoryIndex = index;
     notifyListeners();
   }

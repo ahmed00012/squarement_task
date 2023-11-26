@@ -7,6 +7,7 @@ import 'package:squarement_task/features/home/presentation/widgets/sub_category_
 
 import '../../../shared_widgets/text_widget.dart';
 import '../../provider/home_provider.dart';
+import '../widgets/brand_item.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -34,7 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         index: index,
                         selectedIndex: homeProvider.selectedCategoryIndex,
                         title: homeProvider.mainCategory[index],
-                        onTap: ()=> homeProvider.mainCatChangeIndex(index)
+                        onTap: ()=> homeProvider.mainCategoryChangeIndex(index)
                     );
 
                   }),
@@ -93,18 +94,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               childAspectRatio: 1.9
                           ),
                           itemBuilder: (context,index){
-                            return Padding(
-                              padding:  EdgeInsets.all(5.h),
-                              child: Container(
-                               decoration: BoxDecoration(
-                                 color: AppColor.secondaryColor,
-                                 borderRadius: BorderRadius.circular(3.r),
-                                 border: Border.all(color: AppColor.borderColor)
-                               ),
-                                child: Image.asset(homeProvider.brands[index],
-                                fit: BoxFit.fill),
-                              ),
-                            );
+                            return BrandItem(image: homeProvider.brands[index],);
                           }),
 
                       SizedBox(height: 10.h,),
